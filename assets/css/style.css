@@ -9,9 +9,9 @@
     box-sizing: border-box;
 }
 
-/*---------------------------------------------------- Colours */
 body {
     color: #ffffff;
+    overflow: hidden;
 }
 
 /*---------------------------------------------------- Main Section */
@@ -20,9 +20,25 @@ main {
     background: url("/assets/images/stadium.jpg") no-repeat;
     background-size: cover;
     background-position: center;
+    pointer-events: auto;
+    transition: .3s ease;
+}
+
+/* After opening pop up window, the main section will get blur effect in order to highlight the pop up window and motivate to play */ 
+.main.active {
+    filter: blur(15px);
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 200%;
 }
 
 .home {
+    position: relative;
+    left: -50%;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -77,13 +93,23 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(.9);         /* Add a bit of interaction experience - scaling the pop up windowd after clicking on the Start Quiz button*/ 
     width: 500px;
     background: #ffffff;
     border-radius: 6px;
     padding: 10px 25px;
-    opacity: 0;                                        /* making pop up window not visible on the website, we will access it through JS*/ 
-    pointer-events: none; 
+    opacity: 0; 
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* pop up window is not visible on the website for now (opacity: 0), we will access it through JS DOM
+and add class .active after clicking on button Start Quiz*/
+
+.popup-info.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1); 
 }
 
 .popup-info h2 {
@@ -140,4 +166,30 @@ main {
 .popup-info .btn-group .info-btn:nth-child(2):hover {   /* easy way of targetting second child .info-btn (a) */
     background-color: #950170;
     border-color: #950170;
+}
+
+
+/*---------------------------------------------------- Quiz Section */
+
+/* I decided to create quiz section which will work for playing the game, however I had to:
+- make container width 200% = 100% for .quiz-section and 100% for .home,
+- give them CSS style position: relative and left -50% aswell,
+- use overflow-hidden for body element
+
+It's been an easy solution for creating a playing window (the .quiz-section is "below" .home section now)
+because it's easy to target in JS DOM
+*/ 
+
+.quiz-section {
+    position: relative;
+    left: -50%;
+    width: 100%;
+    background: #000000;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;                             /* Add a nice transition movement after opening quiz */ 
+    z-index: 100;
+}
+
+.quiz-section.active {
+    left: 0;
 }
