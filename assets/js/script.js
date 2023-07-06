@@ -4,6 +4,7 @@ const exitBtn = document.querySelector('.exit-btn');
 const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
 const quizSection = document.querySelector('.quiz-section');
+const quizBox = document.querySelector('.quiz-box');
 
 
 //Make the pop up window open after clicking on Start Quiz(make main window blur too) and close when clicking on Exit
@@ -22,4 +23,67 @@ continueBtn.onclick = () => {
     quizSection.classList.add('active');
     popupInfo.classList.remove('active');
     main.classList.remove('active');
+    quizBox.classList.add('active');
+
+    showQuestions(0);
+    questionCounter(1);
+}
+
+let questionCount = 0;
+let questionNumb  = 1;
+
+const nextBtn = document.querySelector('.next-btn');
+
+//When user clicks on button Next (next question), we want to increase number of completed questions by 1 and show another question from questions.js (with right index!!)
+nextBtn.onclick = () => {
+    if (questionCount < questions.length -1) {
+        questionCount++;
+        showQuestions(questionCount);
+
+        questionNumb++;
+        questionCounter(questionNumb);
+    } else {
+        console.log('Questions Completed');
+    }
+}
+
+const optionList = document.querySelector('.option-list');
+
+//Get quiz questions and options from array in questions.js
+function showQuestions(index) {
+    const questionText = document.querySelector('.question-text');
+    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+
+    let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
+                    <div class="option"><span>${questions[index].options[1]}</span></div>
+                    <div class="option"><span>${questions[index].options[2]}</span></div>
+                    <div class="option"><span>${questions[index].options[3]}</span></div>`;
+
+    optionList.innerHTML = optionTag;
+
+    //Iterate through options and give them attribute optionSelected, which we use as a function below
+    const option = document.querySelectorAll('.option');
+    for (let i=0; i < option.length; i++) {
+        option[i].setAttribute('onclick', 'optionSelected(this)');
+    }
+}
+
+
+//Check user's answer and compare with the correct one, also show the green/red color depending on answer
+function optionSelected(answer) {
+    let userAnswer = answer.textContent;
+    let correctAnswer = questions[questionCount].answer;
+
+    if (userAnswer == correctAnswer) {
+        answer.classList.add('correct');
+    } else {
+        answer.classList.add('incorrect');
+    }
+}
+
+
+//Count how many questions user finished
+function questionCounter(index) {
+    const questionTotal = document.querySelector('.question-total');
+    questionTotal.textContent = `${index} of ${questions.length} Questions`;
 }
