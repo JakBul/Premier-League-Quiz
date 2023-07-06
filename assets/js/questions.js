@@ -12,7 +12,7 @@ let questions = [
     },
     {
         numb: 2,
-        question: "Which player has the most Premier League goals?",
+        question: "Which player has scored the most Premier League goals?",
         answer: "A. Alan Shearer",
         options: [
             "A. Alan Shearer",
@@ -34,7 +34,7 @@ let questions = [
     },
     {
         numb: 4,
-        question: "Which team has won most most Premier League titles?",
+        question: "Which team has won the most Premier League titles?",
         answer: "B. Manchester United",
         options: [
             "A. Liverpool",
@@ -45,7 +45,7 @@ let questions = [
     },
     {
         numb: 5,
-        question: "Which player has the most Premier League hat-tricks?",
+        question: "Which player has scored the most Premier League hat-tricks?",
         answer: "D. Sergio Agüero",
         options: [
             "A. Cristiano Ronaldo",

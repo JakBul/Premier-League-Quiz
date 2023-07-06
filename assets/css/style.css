@@ -207,6 +207,17 @@ because it's easy to target in JS DOM
     display: flex;
     flex-direction: column;
     padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+}
+
+.quiz-section .quiz-box.active {                        /* Add another movement of quiz-box after opening quiz for better appearance */
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
 }
 
 .quiz-box h1 {
@@ -257,6 +268,18 @@ because it's easy to target in JS DOM
     border-color: rgba(255, 255, 255, .1);
 }
 
+.quiz-box .option-list .option.correct {
+    background: #09001d;
+    color: #00a63d;
+    border-color: #00a63d;
+}
+
+.quiz-box .option-list .option.incorrect {
+    background: #09001d;
+    color: #a60045;
+    border-color: #a60045;
+}
+
 .quiz-box .quiz-footer {
     display: flex;
     justify-content: space-between;
@@ -282,7 +305,7 @@ because it's easy to target in JS DOM
     color: rgba(255, 255, 255, .3);
     font-weight: 600;
     cursor: pointer;
-    pointer-events: none;
+    pointer-events: auto;
     transition: .5s;
 }
 
