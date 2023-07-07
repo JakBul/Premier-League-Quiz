@@ -280,6 +280,10 @@ because it's easy to target in JS DOM
     border-color: #a60045;
 }
 
+.quiz-box .option-list .option.disabled {
+    pointer-events: none;    
+}
+
 .quiz-box .quiz-footer {
     display: flex;
     justify-content: space-between;
