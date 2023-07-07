@@ -27,10 +27,12 @@ continueBtn.onclick = () => {
 
     showQuestions(0);
     questionCounter(1);
+    headerScore();
 }
 
 let questionCount = 0;
 let questionNumb  = 1;
+let userScore = 0;
 
 const nextBtn = document.querySelector('.next-btn');
 
@@ -73,17 +75,40 @@ function showQuestions(index) {
 function optionSelected(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
+    let allOptions = optionList.children.length;
 
     if (userAnswer == correctAnswer) {
         answer.classList.add('correct');
+        //The correct answer adds one point to overall score
+        userScore += 1;
+        headerScore();
     } else {
         answer.classList.add('incorrect');
+
+        //When user selects incorrect answer, we will show him the correct one (auto select)
+        for (let i = 0; i < allOptions; i++) {
+            if (optionList.children[i].textContent == correctAnswer) {
+                optionList.children[i].setAttribute('class', 'option correct');
+            }
+        }
     }
+
+    //When user selects one of the possible answer, we have to disable other options simultaneously to prevent multianswering
+    for (let i = 0; i < allOptions; i++) {
+        optionList.children[i].classList.add('disabled');
+    }
+    
 }
 
 
-//Count how many questions user finished
+//Count how many questions user finished and show it in the quiz
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
     questionTotal.textContent = `${index} of ${questions.length} Questions`;
+}
+
+//Count how many questions are answered correctly and show it in the quiz
+function headerScore() {
+    const headerScoreText = document.querySelector('.header-score');
+    headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`;
 }
