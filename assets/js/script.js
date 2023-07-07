@@ -44,6 +44,8 @@ nextBtn.onclick = () => {
 
         questionNumb++;
         questionCounter(questionNumb);
+
+        nextBtn.classList.remove('active');
     } else {
         console.log('Questions Completed');
     }
@@ -97,6 +99,9 @@ function optionSelected(answer) {
     for (let i = 0; i < allOptions; i++) {
         optionList.children[i].classList.add('disabled');
     }
+
+    //User can not move to next question when has not answered yet
+    nextBtn.classList.add('active');
     
 }
 
