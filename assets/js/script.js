@@ -5,7 +5,9 @@ const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
 const quizSection = document.querySelector('.quiz-section');
 const quizBox = document.querySelector('.quiz-box');
-
+const resultBox = document.querySelector('.result-box');
+const tryAgainBtn = document.querySelector('.tryAgain-btn');
+const goHomeBtn = document.querySelector('.goHome-btn');
 
 //Make the pop up window open after clicking on Start Quiz(make main window blur too) and close when clicking on Exit
 startBtn.onclick = () => {
@@ -30,6 +32,35 @@ continueBtn.onclick = () => {
     headerScore();
 }
 
+tryAgainBtn.onclick = () => {
+    quizBox.classList.add('active');
+    nextBtn.classList.remove('active');
+    resultBox.classList.remove('active');
+    
+    //Start a new game after clicking 'Try Again' in the result box
+    questionCount = 0;
+    questionNumb  = 1;
+    userScore = 0;
+    showQuestions(questionCount);
+    questionCounter(questionNumb);
+
+    headerScore();
+}
+
+goHomeBtn.onclick = () => {
+    quizSection.classList.remove('active');
+    nextBtn.classList.remove('active');
+    resultBox.classList.remove('active');
+    
+    //Reset stats after going back Home, play might play another Game
+    questionCount = 0;
+    questionNumb  = 1;
+    userScore = 0;
+    showQuestions(questionCount);
+    questionCounter(questionNumb);
+}
+
+
 let questionCount = 0;
 let questionNumb  = 1;
 let userScore = 0;
@@ -47,7 +78,7 @@ nextBtn.onclick = () => {
 
         nextBtn.classList.remove('active');
     } else {
-        console.log('Questions Completed');
+        showResultBox();
     }
 }
 
@@ -116,4 +147,34 @@ function questionCounter(index) {
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
     headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`;
+}
+
+//Show results box, quizBox disappears after last question
+function showResultBox () {
+    quizBox.classList.remove('active');
+    resultBox.classList.add('active');
+
+    const scoreText = document.querySelector('.score-text');
+    scoreText.textContent = `Your Score is ${userScore} out of ${questions.length}`;
+
+    //Shows results dynamically with help of Interval
+    const circularProgress = document.querySelector('.circular-progress');
+    const progressValue = document.querySelector('.progress-value');
+
+    //ProgressStartValue can not be 0 because then player with 0 correct answers will see bug with circularProgress(not stoping to raise amount of %)
+    let progressStartValue = -1;
+    let progressEndValue = (userScore / questions.length) * 100;
+    let speed = 20;
+
+    let progress = setInterval( () => {
+        progressStartValue++;
+
+        progressValue.textContent = `${progressStartValue}% `;
+        circularProgress.style.background = `conic-gradient(#c40094 ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1)0deg)`;
+
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
+
 }

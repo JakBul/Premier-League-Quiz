@@ -210,6 +210,8 @@ because it's easy to target in JS DOM
     opacity: 0;
     pointer-events: none;
     transform: scale(.9);
+    transition: .3s ease;
+    transition-delay: 0s;
 }
 
 .quiz-section .quiz-box.active {                        /* Add another movement of quiz-box after opening quiz for better appearance */
@@ -331,7 +333,7 @@ because it's easy to target in JS DOM
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(.9);
     width: 500px;
     background: transparent;
     border: 2px solid #c40094;
@@ -342,6 +344,13 @@ because it's easy to target in JS DOM
     align-items: center;
     opacity: 0;
     pointer-events: none;                               /* Opacity is 0 again, we access it through JS at the end of game */
+    transition: .3s ease;
+}
+
+.quiz-section .result-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .quiz-section .result-box h2 {
