@@ -13,12 +13,12 @@ const goHomeBtn = document.querySelector('.goHome-btn');
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
     main.classList.add('active');
-}
+};
 
 exitBtn.onclick = () => {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
-}
+};
 
 //Open the game window
 continueBtn.onclick = () => {
@@ -30,7 +30,7 @@ continueBtn.onclick = () => {
     showQuestions(0);
     questionCounter(1);
     headerScore();
-}
+};
 
 tryAgainBtn.onclick = () => {
     quizBox.classList.add('active');
@@ -45,7 +45,7 @@ tryAgainBtn.onclick = () => {
     questionCounter(questionNumb);
 
     headerScore();
-}
+};
 
 goHomeBtn.onclick = () => {
     quizSection.classList.remove('active');
@@ -58,7 +58,7 @@ goHomeBtn.onclick = () => {
     userScore = 0;
     showQuestions(questionCount);
     questionCounter(questionNumb);
-}
+};
 
 
 let questionCount = 0;
@@ -80,7 +80,7 @@ nextBtn.onclick = () => {
     } else {
         showResultBox();
     }
-}
+};
 
 const optionList = document.querySelector('.option-list');
 

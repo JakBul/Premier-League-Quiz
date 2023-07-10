@@ -53,5 +53,60 @@ let questions = [
             "C. Luis Suárez",
             "D. Sergio Agüero"
         ]
+    },
+    {
+        numb: 6,
+        question: "Which team has won Premier League title with the most points?",
+        answer: "A. Manchester City",
+        options: [
+            "A. Manchester City",
+            "B. Liverpool",
+            "C. Nottingham Forest",
+            "D. Manchester United"
+        ]
+    },
+    {
+        numb: 7,
+        question: "Which team has got the most defeats in total?",
+        answer: "C. Everton",
+        options: [
+            "A. Aston Villa",
+            "B. Sunderland",
+            "C. Everton",
+            "D. Southampton"
+        ]
+    },
+    {
+        numb: 8,
+        question: "Which player has scored the most Premier League goals at one club?",
+        answer: "B. Harry Kane",
+        options: [
+            "A. Cristiano Ronaldo",
+            "B. Harry Kane",
+            "C. Luis Suárez",
+            "D. Thierry Henry"
+        ]
+    },
+    {
+        numb: 9,
+        question: "Which player has made the most Premier League appearances as a substitute?",
+        answer: "A. James Milner",
+        options: [
+            "A. James Milner",
+            "B. Marcus Bent",
+            "C. Brad Friedel",
+            "D. Ryan Giggs"
+        ]
+    },
+    {
+        numb: 10,
+        question: "Which goalkeeper has got the most clean sheets in Premier League?",
+        answer: "A. Petr Čech",
+        options: [
+            "A. Petr Čech",
+            "B. David James",
+            "C. Pepe Reina",
+            "D. David de Gea"
+        ]
     }
 ];
