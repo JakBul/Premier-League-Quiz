@@ -1,39 +1,57 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# PREMIER LEAGUE QUIZ
 
-Welcome,
+[Visit the website here](https://jakbul.github.io/Premier-League-Quiz/)
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Add mockup here:
+![screenshot](documentation/mockup.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+Created to show ability of creating interactive webpage using JavaScript. This project was made for educational purposes only.
 
-## Codeanywhere Reminders
+This website is made up of only one web page with three separate sections: Home, Quiz Section and Result Box.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+The business goals for this website are:
 
-`python3 -m http.server`
+1. To promote Premier League and knowledge about the best league in the world
+2. To inspire users to play the quiz
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+The user goals of this website are:
+1. As a first-time visitor, I want to easily find buttons to play the game and interact with the game
+2. As a recurring or first-time visitor, I want to find information of how exactly to play the game
+3. As a recurring or first-time visitor, I want to have fun with questions and see my result of the quiz
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
 
-`http_server`
+## UX
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### **Strategy**
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+Considering the core UX principles, I first started to think about the strategy for this website and defined who the target users would be and what features/technologies they would want.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Premier League Quiz target users are:
+* Aged 01-99
+* Football lovers, fans, anyone who follows football in general as Premier League is the most watched leauge in the world
+* Have an interest to test their knowledge
 
-To log into the Heroku toolbelt CLI:
+What these users would be looking for:
+* Clear and easy-to-use interaction
+* Good & simple looking design that provides inspiration and make the quiz look desirable
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+This quiz has been built to offer all of these things. An effort was taken to provide as intuitive interaction as possible for every user visiting the webpage.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+Due to the age group of the users, it is assumed that most users will be viewing the site not only on their mobile phones, but also on the tablets or computers. Therefore, creating something responsive is integral to the design.
 
----
+### **Scope**
 
-Happy coding!
+In order to achieve the desired user & business goals, the following features will be included in this release:
+
+- Simple Home section with button to Start Quiz
+- Popup window explaining how to play the Quiz and options of either Exit or Play
+- Quiz Section that contains 10 Questions with 4 possible answers
+- Every question has only one correct answer
+- Only after answering each question, player can move to another one
+- After the last question the result will be shown in Result Box section
+- Player can go back to menu of the game if needs or play again upon clicking on button Try Again 
+
+### **Structure** 
+
+This is one page website to access simplicity.
+
