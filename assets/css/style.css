@@ -14,6 +14,11 @@ body {
     overflow: hidden;
 }
 
+/* Use to access elements which has to get hidden*/
+.hide {
+    display: none;
+}
+
 /*---------------------------------------------------- Main Section */
 main {
     min-height: 100vh;

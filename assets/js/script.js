@@ -1,3 +1,4 @@
+// Access DOM - change const to let
 const startBtn = document.querySelector('.start-btn');
 const popupInfo = document.querySelector('.popup-info');
 const exitBtn = document.querySelector('.exit-btn');
@@ -8,6 +9,7 @@ const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
 const tryAgainBtn = document.querySelector('.tryAgain-btn');
 const goHomeBtn = document.querySelector('.goHome-btn');
+
 
 //Make the pop up window open after clicking on Start Quiz(make main window blur too) and close when clicking on Exit
 startBtn.onclick = () => {
@@ -61,9 +63,11 @@ goHomeBtn.onclick = () => {
 };
 
 
+//Global variables - Access HTML with the div, create function that incrementScore if answer is correct (userScore)
 let questionCount = 0;
 let questionNumb  = 1;
 let userScore = 0;
+
 
 const nextBtn = document.querySelector('.next-btn');
 
@@ -89,6 +93,7 @@ function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
     questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
 
+    // each option own ID, access them by ID and set value to ${questions[index].options[0]}, easier for maintenance
     let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
                     <div class="option"><span>${questions[index].options[1]}</span></div>
                     <div class="option"><span>${questions[index].options[2]}</span></div>
@@ -110,7 +115,7 @@ function optionSelected(answer) {
     let correctAnswer = questions[questionCount].answer;
     let allOptions = optionList.children.length;
 
-    if (userAnswer == correctAnswer) {
+    if (userAnswer === correctAnswer) {
         answer.classList.add('correct');
         //The correct answer adds one point to overall score
         userScore += 1;
@@ -120,7 +125,7 @@ function optionSelected(answer) {
 
         //When user selects incorrect answer, we will show him the correct one (auto select)
         for (let i = 0; i < allOptions; i++) {
-            if (optionList.children[i].textContent == correctAnswer) {
+            if (optionList.children[i].textContent === correctAnswer) {
                 optionList.children[i].setAttribute('class', 'option correct');
             }
         }
@@ -170,6 +175,7 @@ function showResultBox () {
         progressStartValue++;
 
         progressValue.textContent = `${progressStartValue}% `;
+        //use CSS var targeting
         circularProgress.style.background = `conic-gradient(#c40094 ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1)0deg)`;
 
         if (progressStartValue == progressEndValue) {

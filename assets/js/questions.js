@@ -1,3 +1,5 @@
+
+//change let to "const QUESTIONS"! + change access in script.js
 let questions = [
     {
         numb: 1,
