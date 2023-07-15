@@ -113,7 +113,17 @@ function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
     questionText.textContent = `${QUESTIONS[index].numb}. ${QUESTIONS[index].question}`;
 
-    // MENTOR: (each option own ID, access them by ID and set value to ${questions[index].options[0]}, easier for maintenance)
+    // MENTOR: (each option own ID, access them by ID and set value to ${QUESTIONS[index].options[0]}, easier for maintenance)
+    /* let option1 = document.getElementById('option1');
+    let option2 = document.getElementById('option2');
+    let option3 = document.getElementById('option3');
+    let option4 = document.getElementById('option4');
+    
+    option1.textContent = `${QUESTIONS[index].options[0]}`;
+    option2.textContent = `${QUESTIONS[index].options[1]}`;
+    option3.textContent = `${QUESTIONS[index].options[2]}`;
+    option4.textContent = `${QUESTIONS[index].options[3]}`; */
+
     let optionTag = `<div class="option"><span>${QUESTIONS[index].options[0]}</span></div>
                     <div class="option"><span>${QUESTIONS[index].options[1]}</span></div>
                     <div class="option"><span>${QUESTIONS[index].options[2]}</span></div>
@@ -121,7 +131,7 @@ function showQuestions(index) {
 
     optionList.innerHTML = optionTag;
 
-    //Iterate through options and give them attribute optionSelected, which we use in the function below
+    //Iterate through options and give them attribute optionSelected when chosen, we use it in the function below
     const option = document.querySelectorAll('.option');
     for (let i=0; i < option.length; i++) {
         option[i].setAttribute('onclick', 'optionSelected(this)');

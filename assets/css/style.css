@@ -11,10 +11,10 @@
 
 body {
     color: #ffffff;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
-/* Use to access elements which has to get hidden*/
+/* MENTOR: Use to access elements which has to get hidden*/
 .hide {
     display: none;
 }
@@ -433,4 +433,31 @@ because it's easy to target in JS DOM
 .buttons button:nth-child(2):hover {
     background: #c40094;
     color: #ffffff;
+}
+
+/*---------------------------------------------------- Responsiveness */
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+    
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+    
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+    
 }
