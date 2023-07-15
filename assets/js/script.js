@@ -1,29 +1,46 @@
-// Access DOM - change const to let
-const startBtn = document.querySelector('.start-btn');
-const popupInfo = document.querySelector('.popup-info');
-const exitBtn = document.querySelector('.exit-btn');
-const main = document.querySelector('.main');
-const continueBtn = document.querySelector('.continue-btn');
-const quizSection = document.querySelector('.quiz-section');
-const quizBox = document.querySelector('.quiz-box');
-const resultBox = document.querySelector('.result-box');
-const tryAgainBtn = document.querySelector('.tryAgain-btn');
-const goHomeBtn = document.querySelector('.goHome-btn');
+//ACCESS THE DOM
+let startBtn = document.querySelector('.start-btn');
+let popupInfo = document.querySelector('.popup-info');
+let exitBtn = document.querySelector('.exit-btn');
+let main = document.querySelector('.main');
+let continueBtn = document.querySelector('.continue-btn');
+let quizSection = document.querySelector('.quiz-section');
+let quizBox = document.querySelector('.quiz-box');
+let resultBox = document.querySelector('.result-box');
+let tryAgainBtn = document.querySelector('.tryAgain-btn');
+let goHomeBtn = document.querySelector('.goHome-btn');
+let nextBtn = document.querySelector('.next-btn');
+let optionList = document.querySelector('.option-list');
 
 
-//Make the pop up window open after clicking on Start Quiz(make main window blur too) and close when clicking on Exit
-startBtn.onclick = () => {
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Global variables - (MENTOR: Access HTML with the div, create function that incrementScore if answer is correct (userScore) )
+let questionCount = 0;
+let questionNumb  = 1;
+let userScore = 0;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//FUNCTIONS FOR BUTTONS
+
+//Open popup window when clicking on button Start Quiz on homepage
+function startQuiz() {
     popupInfo.classList.add('active');
     main.classList.add('active');
 };
 
-exitBtn.onclick = () => {
+startBtn.addEventListener('click', startQuiz);
+
+//Close popup window when clicking on button Exit in popup window
+function exitQuiz() {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
 };
 
-//Open the game window
-continueBtn.onclick = () => {
+exitBtn.addEventListener('click', exitQuiz);
+
+//Open the game window when clicking on button Play in popup window
+function openGame() {
     quizSection.classList.add('active');
     popupInfo.classList.remove('active');
     main.classList.remove('active');
@@ -34,12 +51,14 @@ continueBtn.onclick = () => {
     headerScore();
 };
 
-tryAgainBtn.onclick = () => {
+continueBtn.addEventListener('click', openGame);
+
+//Start a new game after clicking on button Try Again in result box
+function tryAgain() {
     quizBox.classList.add('active');
     nextBtn.classList.remove('active');
     resultBox.classList.remove('active');
     
-    //Start a new game after clicking 'Try Again' in the result box
     questionCount = 0;
     questionNumb  = 1;
     userScore = 0;
@@ -49,12 +68,16 @@ tryAgainBtn.onclick = () => {
     headerScore();
 };
 
-goHomeBtn.onclick = () => {
+tryAgainBtn.addEventListener('click', tryAgain);
+
+
+//Send back to homepage when clicking on button Home in result box
+function goHome() {
     quizSection.classList.remove('active');
     nextBtn.classList.remove('active');
     resultBox.classList.remove('active');
     
-    //Reset stats after going back Home, play might play another Game
+    //Reset stats after going back Home, player might play another Game
     questionCount = 0;
     questionNumb  = 1;
     userScore = 0;
@@ -62,18 +85,11 @@ goHomeBtn.onclick = () => {
     questionCounter(questionNumb);
 };
 
+goHomeBtn.addEventListener('click', goHome);
 
-//Global variables - Access HTML with the div, create function that incrementScore if answer is correct (userScore)
-let questionCount = 0;
-let questionNumb  = 1;
-let userScore = 0;
-
-
-const nextBtn = document.querySelector('.next-btn');
-
-//When user clicks on button Next (next question), we want to increase number of completed questions by 1 and show another question from questions.js (with right index!!)
-nextBtn.onclick = () => {
-    if (questionCount < questions.length -1) {
+//When user clicks on button Next in quiz box(next question), we want to increase number of completed questions by 1 and show another question from questions.js (with right index!!)
+function nextQuestion() {
+    if (questionCount < QUESTIONS.length -1) {
         questionCount++;
         showQuestions(questionCount);
 
@@ -86,22 +102,26 @@ nextBtn.onclick = () => {
     }
 };
 
-const optionList = document.querySelector('.option-list');
+nextBtn.addEventListener('click', nextQuestion);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//GAMEPLAY FUNCTIONS
 
 //Get quiz questions and options from array in questions.js
 function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
-    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+    questionText.textContent = `${QUESTIONS[index].numb}. ${QUESTIONS[index].question}`;
 
-    // each option own ID, access them by ID and set value to ${questions[index].options[0]}, easier for maintenance
-    let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
-                    <div class="option"><span>${questions[index].options[1]}</span></div>
-                    <div class="option"><span>${questions[index].options[2]}</span></div>
-                    <div class="option"><span>${questions[index].options[3]}</span></div>`;
+    // MENTOR: (each option own ID, access them by ID and set value to ${questions[index].options[0]}, easier for maintenance)
+    let optionTag = `<div class="option"><span>${QUESTIONS[index].options[0]}</span></div>
+                    <div class="option"><span>${QUESTIONS[index].options[1]}</span></div>
+                    <div class="option"><span>${QUESTIONS[index].options[2]}</span></div>
+                    <div class="option"><span>${QUESTIONS[index].options[3]}</span></div>`;
 
     optionList.innerHTML = optionTag;
 
-    //Iterate through options and give them attribute optionSelected, which we use as a function below
+    //Iterate through options and give them attribute optionSelected, which we use in the function below
     const option = document.querySelectorAll('.option');
     for (let i=0; i < option.length; i++) {
         option[i].setAttribute('onclick', 'optionSelected(this)');
@@ -112,7 +132,7 @@ function showQuestions(index) {
 //Check user's answer and compare with the correct one, also show the green/red color depending on answer
 function optionSelected(answer) {
     let userAnswer = answer.textContent;
-    let correctAnswer = questions[questionCount].answer;
+    let correctAnswer = QUESTIONS[questionCount].answer;
     let allOptions = optionList.children.length;
 
     if (userAnswer === correctAnswer) {
@@ -123,7 +143,7 @@ function optionSelected(answer) {
     } else {
         answer.classList.add('incorrect');
 
-        //When user selects incorrect answer, we will show him the correct one (auto select)
+        //When user selects an incorrect answer, we will show him the correct one (auto select)
         for (let i = 0; i < allOptions; i++) {
             if (optionList.children[i].textContent === correctAnswer) {
                 optionList.children[i].setAttribute('class', 'option correct');
@@ -131,7 +151,7 @@ function optionSelected(answer) {
         }
     }
 
-    //When user selects one of the possible answer, we have to disable other options simultaneously to prevent multianswering
+    //When user selects one of the possible answers, we have to disable other options simultaneously to prevent multianswering
     for (let i = 0; i < allOptions; i++) {
         optionList.children[i].classList.add('disabled');
     }
@@ -145,13 +165,13 @@ function optionSelected(answer) {
 //Count how many questions user finished and show it in the quiz
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
-    questionTotal.textContent = `${index} of ${questions.length} Questions`;
+    questionTotal.textContent = `${index} of ${QUESTIONS.length} Questions`;
 }
 
 //Count how many questions are answered correctly and show it in the quiz
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
-    headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`;
+    headerScoreText.textContent = `Score: ${userScore} / ${QUESTIONS.length}`;
 }
 
 //Show results box, quizBox disappears after last question
@@ -160,7 +180,7 @@ function showResultBox () {
     resultBox.classList.add('active');
 
     const scoreText = document.querySelector('.score-text');
-    scoreText.textContent = `Your Score is ${userScore} out of ${questions.length}`;
+    scoreText.textContent = `Your Score is ${userScore} out of ${QUESTIONS.length}`;
 
     //Shows results dynamically with help of Interval
     const circularProgress = document.querySelector('.circular-progress');
@@ -168,14 +188,14 @@ function showResultBox () {
 
     //ProgressStartValue can not be 0 because then player with 0 correct answers will see bug with circularProgress(not stoping to raise amount of %)
     let progressStartValue = -1;
-    let progressEndValue = (userScore / questions.length) * 100;
+    let progressEndValue = (userScore / QUESTIONS.length) * 100;
     let speed = 20;
 
     let progress = setInterval( () => {
         progressStartValue++;
 
         progressValue.textContent = `${progressStartValue}% `;
-        //use CSS var targeting
+        //(MENTOR: use CSS var targeting)
         circularProgress.style.background = `conic-gradient(#c40094 ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1)0deg)`;
 
         if (progressStartValue == progressEndValue) {
@@ -184,3 +204,12 @@ function showResultBox () {
     }, speed);
 
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//DOM LOADED
+
+//Execute our JS code only when the DOM is fully loaded
+window.addEventListener("DOMContentLoaded", (event) => {
+    console.log('Page is fully loaded');
+});

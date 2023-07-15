@@ -1,6 +1,4 @@
-
-//change let to "const QUESTIONS"! + change access in script.js
-let questions = [
+const QUESTIONS = [
     {
         numb: 1,
         question: "Which player has the most Premier League appearances?",
