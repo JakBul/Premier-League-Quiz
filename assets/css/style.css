@@ -11,7 +11,7 @@
 
 body {
     color: #ffffff;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /* MENTOR: Use to access elements which has to get hidden*/
@@ -22,7 +22,7 @@ body {
 /*---------------------------------------------------- Main Section */
 main {
     min-height: 100vh;
-    background: url("/assets/images/stadium.jpg") no-repeat;
+    background: url("assets/images/stadium.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
