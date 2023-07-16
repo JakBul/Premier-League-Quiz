@@ -11,18 +11,12 @@
 
 body {
     color: #ffffff;
-    overflow: hidden;
-}
-
-/* MENTOR: Use to access elements which has to get hidden*/
-.hide {
-    display: none;
 }
 
 /*---------------------------------------------------- Main Section */
 main {
     min-height: 100vh;
-    background: url("assets/images/stadium.jpg") no-repeat;
+    background: url("/assets/images/stadium.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -30,20 +24,13 @@ main {
 }
 
 /* After opening pop up window, the main section will get blur effect in order to highlight the pop up window and motivate to play */ 
-.main.active {
+.main.blur {
     filter: blur(15px);
     pointer-events: none;
 }
 
-.container {
-    display: flex;
-    height: 100vh;
-    width: 200%;
-}
-
 .home {
     position: relative;
-    left: -50%;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -176,22 +163,17 @@ and add class .active after clicking on button Start Quiz*/
 
 /*---------------------------------------------------- Quiz Section */
 
-/* I decided to create quiz section which will work for playing the game, however I had to:
-- make container width 200% = 100% for .quiz-section and 100% for .home,
-- give them CSS style position: relative and left -50% aswell,
-- use overflow-hidden for body element
-
-It's been an easy solution for creating a playing window (the .quiz-section is "below" .home section now)
-because it's easy to target in JS DOM
-*/ 
 
 .quiz-section {
-    position: relative;
-    left: -50%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
     width: 100%;
+    height: 100%;
     background: #09001d;
-    z-index: 100;
     display: flex;
+    opacity: 0;
+    pointer-events: none;
     justify-content: center;
     align-items: center;
     transition: .8s ease-in-out;
@@ -200,12 +182,12 @@ because it's easy to target in JS DOM
 }
 
 .quiz-section.active {
-    left: 0;
+    opacity: 1;
 }
 
 .quiz-section .quiz-box {
     position: relative;
-    width: 500px;
+    width: 65%;
     background: transparent;
     border: 2px solid #c40094;
     border-radius: 6px;
@@ -439,7 +421,10 @@ because it's easy to target in JS DOM
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
-
+    body {
+        width: 100%;
+        height: 90%;
+    }
 }
 
 /* Media Query for low resolution  Tablets, Ipads */

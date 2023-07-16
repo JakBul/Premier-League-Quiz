@@ -26,7 +26,7 @@ let userScore = 0;
 //Open popup window when clicking on button Start Quiz on homepage
 function startQuiz() {
     popupInfo.classList.add('active');
-    main.classList.add('active');
+    main.classList.add('blur');
 };
 
 startBtn.addEventListener('click', startQuiz);
@@ -34,7 +34,7 @@ startBtn.addEventListener('click', startQuiz);
 //Close popup window when clicking on button Exit in popup window
 function exitQuiz() {
     popupInfo.classList.remove('active');
-    main.classList.remove('active');
+    main.classList.remove('blur');
 };
 
 exitBtn.addEventListener('click', exitQuiz);
@@ -43,7 +43,7 @@ exitBtn.addEventListener('click', exitQuiz);
 function openGame() {
     quizSection.classList.add('active');
     popupInfo.classList.remove('active');
-    main.classList.remove('active');
+    main.classList.remove('blur');
     quizBox.classList.add('active');
 
     showQuestions(0);
