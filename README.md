@@ -94,7 +94,7 @@ I decided to use Google font 'Poppins' with different font weights throughout th
 
 - [Poppins](https://fonts.google.com/specimen/Poppins)
 
-- [sans-serif](https://fonts.google.com/knowledge/glossary/sans_serif)
+- [Sans-serif](https://fonts.google.com/knowledge/glossary/sans_serif)
 
 ## Features
 
