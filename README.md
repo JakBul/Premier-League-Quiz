@@ -2,12 +2,11 @@
 
 [Visit the website here](https://jakbul.github.io/Premier-League-Quiz/)
 
-Add mockup here:
-![screenshot](documentation/mockup.png)
+![screenshot](assets/documentation/mockup.png)
 
 Created to show ability of creating interactive webpage using JavaScript. This project was made for educational purposes only.
 
-This website is made up of only one web page with three separate sections: Home, Quiz Section and Result Box.
+This website is made up of only one webpage with three separate sections: Main Page, Quiz Section and Result Box.
 
 The business goals for this website are:
 
@@ -48,15 +47,15 @@ In order to achieve the desired user & business goals, the following features wi
 - Popup window explaining how to play the Quiz and options of either Exit or Play
 - Quiz Section which contains 10 Questions with 4 possible answers
 - Every question has only one correct answer
-- Only after answering each question, player can move to another one
+- Only after answering each question, user can move to another one
 - After the last question the result will be shown in Result Box section
-- Player can go back to menu of the game if needs or play again upon clicking on button Try Again 
+- User can go back to menu of the game if needs or play again upon clicking on button Try Again 
 
 ### **Structure** 
 
 This is one page website to reach simplicity.
 
-I chose the following order for the gameplay 'Home > Pop up window with rules > Quiz Section > Result Box', as I felt this would allow the whole flow of quiz to be digested in the best way.
+I chose the following order for the gameplay 'Main Page > Pop up window with rules > Quiz Section > Result Box', as I felt this would allow the whole flow of quiz to be digested in the best way.
 
 I also chose to use maximum of 10 questions and double-checked them on Wikipedia where are tracked all of English Premier League records. 
 
@@ -71,6 +70,8 @@ Last but not least, I added responsiveness to allow user play the quiz on a diff
 I felt that all mentioned above helps to provide the best User Experience and highlight purpose of this project.
 
 ### **Surface**
+
+Important to mention - this project had to pass all of accessibility critera, that's why I had to choose type of colours and backgrounds that will easily pass them.
 
 ### Colour Scheme
 
@@ -98,8 +99,71 @@ I decided to use Google font 'Poppins' with different font weights throughout th
 
 ## Features
 
+This is a fully responsive website that was designed with an eye for responsiveness as most likely it will be viewed on different screen sizes. The website is made up of only one webpage with three separate sections: Main Page with Popup Window, Quiz Section and Result Box. We access them through JavaScript with 'click' Event Listeners reacting to user's interaction. More deeply, all sections are on the same webpage and in the beginning have in CSS opacity:0, only Main Page has opacity:1 and therefore is visible from the start.
 
+Lastly, all of headings, buttons and hover effects use similar colors to build an easy-to-follow apperance
 
 ### Existing Features
 
 - **Main Page**
+
+Main Page contains background image of football pitch and heading with one paragraph. Below that is button for starting the quiz and also with hover effect after hovering. As mentioned above, I made it simple and highlighted the only purpose of this section - playing the game.
+
+![screenshot](assets/documentation/main-page.png)
+
+- **Popup Window**
+
+When user wants to start the quiz on Main Page, all window becomes blur and this window pops up - 5 rules for how to play the game. User can then go back to Main Page or actually launch the quiz when clicks on the button Play. In this section, I would like to highlight usage of chosen colors and hover effects. Also, window pops up with a small scale transition in order to add more design interaction. 
+
+![screenshot](assets/documentation/popup-window.png)
+
+- **Quiz Section**
+
+When user actually launch the game, Main Page with Popup Window disappears and quiz begins. Quiz contains 10 questions and user can choose one from four possible answers. Question dodging is impossible as user can not move on another question when didn't answer the actual one. Only after each answer the button 'Next' becomes usable. 
+
+When user answers correctly, the button of clicked answer becomes green and user gets one point. When user answers wrong, the button of clicked answer becomes red and the actual right answer button becomes green, as shown in second screenshot below. After the answer, user can move to another question when clicks on button 'Next'. Then new question appears and process repeats.
+
+In this section, I added JavaScript to count achieved score for each individual game and also counter for questions. I would say this is the most important section of all because of focus on chosen UX principles.
+
+![screenshot](assets/documentation/quiz-section.png)
+![screenshot](assets/documentation/quiz-section2.png)
+
+- **Result Box**
+
+When user answers on last 10th question and clicks on button 'Next', quiz ends and Quiz Section disappear. Then, Result Box appears with result which user achieved. In the example below I answered only 2 questions out of 10 correctly, therefore my result is 20%. 
+
+User can decide to go back to Main Page or Try Again. However, user has to start from first question and score 0 again. 
+
+Again, I would like to highlight usage of chosen colors, hover effects, design and responsiveness for following our UX goals.
+
+![screenshot](assets/documentation/result-box.png)
+
+
+### Future Features
+
+**BackEnd Language**
+- I would like to implement work with BackEnd language such as Python to be able to work with database and implement score leaderboard. Then, I could create different quiz sections to achieve more competitiveness
+
+## Tools & Technologies Used
+
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) used for user interaction on the site
+- [Git](https://git-scm.com) used for version control (`git add`, `git commit`, `git push`)
+- [GitHub](https://github.com) used for secure online code storage
+- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site
+- [Gitpod](https://gitpod.io) used as a cloud-based IDE for development
+- [Unsplash](https://www.unsplash.com/) used to find and download free images for project
+- [Google Fonts](https://fonts.google.com/) used to obtain the fonts linked in the header and used in project
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools) used as a primary method of fixing spacing issues, finding bugs, and testing responsiveness across the project
+- [Grammarly](https://www.grammarly.com/) used to fix the thousands of grammar errors across the project
+- [Coloors](https://coolors.co/) used to create a colour palette for the design
+- [W3C Markup Validation Service](https://validator.w3.org/) used to validate all HTML code written and used on this webpage
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) used to validate all CSS code written and used on this webpage
+- [JSHint](https://jshint.com/) used to validate all JS code written and used on this webpage
+- [AmIResponsive](http://ami.responsivedesign.is/) used to generate repsonsive image used in README file
+- [Wikipedia](https://en.wikipedia.org/wiki/Premier_League_records_and_statistics) used to check correct answers 
+
+## Media
+
+# Testing
