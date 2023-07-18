@@ -29,7 +29,7 @@ Considering the core UX principles, I first started to think about the strategy 
 
 Premier League Quiz target users are:
 * Aged 01-99
-* Football lovers, fans, anyone who follows football in general as Premier League is the most watched leauge in the world
+* Football lovers, fans, anyone who follows football in general as Premier League is the most watched league in the world
 * Have an interest to test their knowledge
 
 What these users would be looking for:
@@ -62,14 +62,44 @@ I also chose to use maximum of 10 questions and double-checked them on Wikipedia
 
 ### **Skeleton**
 
-As this project is mostly about Interaction for user, I decided to focus on gameplay and quality of JavaScript code. Therefore, I used as little text and images as possible. 
+As this project is mostly about User Interaction, I decided to focus on gameplay and quality of JavaScript code. Therefore, I used as little text and images as possible. 
 
-I intentionally used CSS styling to make interaction with this quiz funny and handy, with examples of text styling, hovering effect on buttons or showing the right answer after clicking the wrong one.
+I intentionally used CSS styling to make interaction with this quiz funny and handy, for example with text styling, hovering effect on buttons or showing the right answer after clicking the wrong one.
 
 Last but not least, I added responsiveness to allow user play the quiz on a different devices. 
 
-I felt that all mentioned above helps to provide the best user experience and highlight purpose of this project.
+I felt that all mentioned above helps to provide the best User Experience and highlight purpose of this project.
 
 ### **Surface**
 
-I chose a colour palette based around white & black as these colours are elegant and simple to implement into design with more images on the webapge. I paired these with a lighter red colour to show appropriate contrast. 
+### Colour Scheme
+
+I chose a colour palette based around white & black as these colours are elegant and simple to implement into design. I added darker violet color for buttons and headings. Additionally, I chose to use another colours for hover effects and box shadowing.
+
+- `#ffffff` used for primary text or background
+- `#000000` used for secondary text
+- `#C40094` used for primary highlights
+- `#09001D` used for secondary highlights
+- `#09001D` and `#950170` used for hover effects
+- `#00A63D` and `#A60045` used for correct or wrong answer
+
+I used [coolors.co](https://coolors.co/c40094-09001d-ffffff-000000-950170-00a63d-a60045) to help me generate my colour palette.
+
+![screenshot](assets/documentation/coolors.png)
+
+### Typography
+
+
+I decided to use Google font 'Poppins' with different font weights throughout the project thanks to it's elegance. I left font 'sans-serif' as back-up font style if anything goes wrong with Google link. 
+
+- [Poppins](https://fonts.google.com/specimen/Poppins)
+
+- [sans-serif](https://fonts.google.com/knowledge/glossary/sans_serif)
+
+## Features
+
+
+
+### Existing Features
+
+- **Main Page**
