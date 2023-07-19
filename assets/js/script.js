@@ -27,7 +27,7 @@ let userScore = 0;
 function startQuiz() {
     popupInfo.classList.add('active');
     main.classList.add('blur');
-};
+}
 
 startBtn.addEventListener('click', startQuiz);
 
@@ -35,7 +35,7 @@ startBtn.addEventListener('click', startQuiz);
 function exitQuiz() {
     popupInfo.classList.remove('active');
     main.classList.remove('blur');
-};
+}
 
 exitBtn.addEventListener('click', exitQuiz);
 
@@ -49,7 +49,7 @@ function openGame() {
     showQuestions(0);
     questionCounter(1);
     headerScore();
-};
+}
 
 continueBtn.addEventListener('click', openGame);
 
@@ -66,7 +66,7 @@ function tryAgain() {
     questionCounter(questionNumb);
 
     headerScore();
-};
+}
 
 tryAgainBtn.addEventListener('click', tryAgain);
 
@@ -83,7 +83,7 @@ function goHome() {
     userScore = 0;
     showQuestions(questionCount);
     questionCounter(questionNumb);
-};
+}
 
 goHomeBtn.addEventListener('click', goHome);
 
@@ -100,7 +100,7 @@ function nextQuestion() {
     } else {
         showResultBox();
     }
-};
+}
 
 nextBtn.addEventListener('click', nextQuestion);
 

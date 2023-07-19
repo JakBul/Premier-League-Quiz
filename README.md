@@ -169,7 +169,84 @@ Again, I would like to highlight usage of chosen colors, hover effects, design a
 
 ## Media
 
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Unsplash](https://unsplash.com/photos/deGn9vSwXIM) | Main Page | image | Used as link in CSS code |
+
 # Testing
+
+## Code Validation
+
+### HTML
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate my HTML file.
+
+| Page | W3C URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Main Page | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjakbul.github.io%2FPremier-League-Quiz%2F) | ![screenshot](assets/documentation/html_validation.png) | Pass: No Errors |
+
+
+### CSS
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file.
+
+| File | Jigsaw URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjakbul.github.io%2FPremier-League-Quiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](assets/documentation/css_validation.png) | Pass: No Errors, when validated by input - see screenshot. Note! Upon clicking on the link there may be shown some errors |
+
+
+### JavaScript
+I have used the recommended [JSHint](https://jshint.com/) to validate my JS file.
+
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| script.js | ![screenshot](assets/documentation/js_validation.png) | Pass: No Errors, when validated by input - see screenshot. There have been few warnings regarding to ES6 standards |
+
+## Browser Compatibility
+
+I have tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Screenshot | Notes |
+| --- | --- | --- |
+| Chrome | ![screenshot](assets/documentation/main-page.png) | Works as expected |
+| Edge | ![screenshot](assets/documentation/edge_compatibility.png) | Works as expected |
+| Safari (phone) | ![screenshot](assets/documentation/safari_compatibility.jpg) | Works as expected |
+
+## Responsiveness
+
+I have tested my deployed project on multiple devices to check for responsivity issues.
+
+| Device | Screenshot | Notes |
+| --- | --- | --- |
+| Mobile iPhone 13 | ![screenshot](assets/documentation/safari_2.jpg) | Works as expected
+| Mobile iPhone 10 | ![screenshot](assets/documentation/safari_1.jpg) | Not getting full width of webpage on phone when turned to portrait orientation |
+| Tablet (DevTools) | ![screenshot](assets/documentation/tablet_responsiveness.png) | Works as expected |
+| Desktop | ![screenshot](assets/documentation/main-page.png) | Works as expected |
+
+## Lighthouse Audit
+
+I have tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | Desktop | ![screenshot](assets/documentation/lighthouse_home.png) | One irrelevant warning |
+| Home | Mobile | ![screenshot](assets/documentation/lighthouse_home_mobile.png) | One irrelevant warning |
+
+
+## User Story Testing
+
+| User Story | Screenshot | Comments |
+| --- | --- | --- |
+| As a first-time visitor, I want to easily find buttons to play the game and interact with the game | ![screenshot](assets/documentation/main-page.png) | All the quiz is fully interactive and all starts on the Main Page  |
+| As a recurring or first-time visitor, I want to find information of how exactly to play the game | ![screenshot](assets/documentation/popup-window.png) | That's the reason why I added this Popup Window |
+| As a recurring or first-time visitor, I want to have fun with questions and see my result of the quiz | ![screenshot](assets/documentation/result-box.png) | I implemented all UX principles |
+
+
+## Known bugs and fixes
+
+
+
+## Unfixed Bugs
+
+There are no remaining bugs that I am aware of.
 
 ## Deployment
 
