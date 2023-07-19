@@ -55,7 +55,7 @@ In order to achieve the desired user & business goals, the following features wi
 
 This is one page website to reach simplicity.
 
-I chose the following order for the gameplay 'Main Page > Pop up window with rules > Quiz Section > Result Box', as I felt this would allow the whole flow of quiz to be digested in the best way.
+I chose the following order for the gameplay 'Main Page > Popup Window with rules > Quiz Section > Result Box', as I felt this would allow the whole flow of quiz to be digested in the best way.
 
 I also chose to use maximum of 10 questions and double-checked them on Wikipedia where are tracked all of English Premier League records. 
 
@@ -109,13 +109,13 @@ Lastly, all of headings, buttons and hover effects use similar colors to build a
 
 Main Page contains background image of football pitch and heading with one paragraph. Below that is button for starting the quiz and also with hover effect after hovering. As mentioned above, I made it simple and highlighted the only purpose of this section - playing the game.
 
-![screenshot](assets/documentation/main-page.png)
+![screenshot](assets/documentation/main_page.png)
 
 - **Popup Window**
 
 When user wants to start the quiz on Main Page, all window becomes blur and this window pops up - 5 rules for how to play the game. User can then go back to Main Page or actually launch the quiz when clicks on the button Play. In this section, I would like to highlight usage of chosen colors and hover effects. Also, window pops up with a small scale transition in order to add more design interaction. 
 
-![screenshot](assets/documentation/popup-window.png)
+![screenshot](assets/documentation/popup_window.png)
 
 - **Quiz Section**
 
@@ -125,8 +125,8 @@ When user answers correctly, the button of clicked answer becomes green and user
 
 In this section, I added JavaScript to count achieved score for each individual game and also counter for questions. I would say this is the most important section of all because of focus on chosen UX principles.
 
-![screenshot](assets/documentation/quiz-section.png)
-![screenshot](assets/documentation/quiz-section2.png)
+![screenshot](assets/documentation/quiz_section.png)
+![screenshot](assets/documentation/quiz_section2.png)
 
 - **Result Box**
 
@@ -136,7 +136,7 @@ User can decide to go back to Main Page or Try Again. However, user has to start
 
 Again, I would like to highlight usage of chosen colors, hover effects, design and responsiveness for following our UX goals.
 
-![screenshot](assets/documentation/result-box.png)
+![screenshot](assets/documentation/result_box.png)
 
 
 ### Future Features
@@ -165,7 +165,7 @@ Again, I would like to highlight usage of chosen colors, hover effects, design a
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) used to validate all CSS code written and used on this webpage
 - [JSHint](https://jshint.com/) used to validate all JS code written and used on this webpage
 - [AmIResponsive](http://ami.responsivedesign.is/) used to generate repsonsive image used in README file
-- [Wikipedia](https://en.wikipedia.org/wiki/Premier_League_records_and_statistics) used to check correct answers 
+- [Wikipedia](https://en.wikipedia.org/wiki/Premier_League_records_and_statistics) used to double-check correct answers for quiz 
 
 ## Media
 
@@ -174,6 +174,37 @@ Again, I would like to highlight usage of chosen colors, hover effects, design a
 | [Unsplash](https://unsplash.com/photos/deGn9vSwXIM) | Main Page | image | Used as link in CSS code |
 
 # Testing
+
+I used solely Manual Testing for this project. However, there are other possibilites that could be used as JavaScript was part of the code which brings possibility to Automation Testing . In the table below I want to show the differences between them.
+
+| Criteria | Automation Testing = AT | Manual Testing = MT |
+| --- | --- | --- |
+| Speed | AT is much faster than MT | MT requires human resources and is time consuming |
+| Exploratory Testing | AT will not allow any random testing | It is possible during MT |
+| Investment | The initial investment for AT is higher | The initial investment for MT is lower |
+
+
+## Defensive Programming
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+
+| Page | User Action | Expected Result | Pass/Fail | Comments |
+| --- | --- | --- | --- | --- |
+| Main Page | Click on button 'Start Quiz' | Popup Window pops up | Pass | Added transition to blur effect |
+| Popup Window | Click on button 'Exit' | Redirect back to Main Page | Pass | Removes blur effect |
+| | Click on button 'Play' | Start the game | Pass | Added transition between Main Page and Quiz Section |
+| Quiz Section | Click on one of the possible answers button | Show if the answer is correct or not | Pass | |
+| | | If answer is incorrect, button becomes red | Pass | |
+| | | Button of right answer becomes green and user can move to another question by clicking on button 'Next' (not before!)| Pass | |
+| | | If answer is correct, button becomes green | Pass | |
+| | | User gets one point to Score | Pass | |
+| | Click on button 'Next' | Next questions shows up | Pass | |
+| | | Question counter works properly | Pass | |
+| | Click on button 'Next' on the last 10th question | Result box shows up | Pass | Added transition between Quiz Section and Result Box |
+| Result Box | Click on button 'Try Again' | Start a new game | Pass | |
+| Result Box | Click on button 'Go To Home' | Redirect back to Main Page | Pass | Added transition between Result Box and Main Page |
+
 
 ## Code Validation
 
@@ -190,7 +221,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 | File | Jigsaw URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjakbul.github.io%2FPremier-League-Quiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](assets/documentation/css_validation.png) | Pass: No Errors, when validated by input - see screenshot. Note! Upon clicking on the link there may be shown some errors |
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjakbul.github.io%2FPremier-League-Quiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](assets/documentation/css_validation.png) | Pass: No Errors when validated by input - see screenshot. Note! Upon clicking on the link there may be shown some errors |
 
 
 ### JavaScript
@@ -198,7 +229,7 @@ I have used the recommended [JSHint](https://jshint.com/) to validate my JS file
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| script.js | ![screenshot](assets/documentation/js_validation.png) | Pass: No Errors, when validated by input - see screenshot. There have been few warnings regarding to ES6 standards |
+| script.js and questions.js | ![screenshot](assets/documentation/js_validation.png) | Pass: No Errors when validated by input with ES6 standard, only one unused variable |
 
 ## Browser Compatibility
 
@@ -206,7 +237,7 @@ I have tested my deployed project on multiple browsers to check for compatibilit
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
-| Chrome | ![screenshot](assets/documentation/main-page.png) | Works as expected |
+| Chrome | ![screenshot](assets/documentation/main_page.png) | Works as expected |
 | Edge | ![screenshot](assets/documentation/edge_compatibility.png) | Works as expected |
 | Safari (phone) | ![screenshot](assets/documentation/safari_compatibility.jpg) | Works as expected |
 
@@ -219,7 +250,7 @@ I have tested my deployed project on multiple devices to check for responsivity 
 | Mobile iPhone 13 | ![screenshot](assets/documentation/safari_2.jpg) | Works as expected
 | Mobile iPhone 10 | ![screenshot](assets/documentation/safari_1.jpg) | Not getting full width of webpage on phone when turned to portrait orientation |
 | Tablet (DevTools) | ![screenshot](assets/documentation/tablet_responsiveness.png) | Works as expected |
-| Desktop | ![screenshot](assets/documentation/main-page.png) | Works as expected |
+| Desktop | ![screenshot](assets/documentation/main_page.png) | Works as expected |
 
 ## Lighthouse Audit
 
@@ -235,18 +266,31 @@ I have tested my deployed project using the Lighthouse Audit tool to check for a
 
 | User Story | Screenshot | Comments |
 | --- | --- | --- |
-| As a first-time visitor, I want to easily find buttons to play the game and interact with the game | ![screenshot](assets/documentation/main-page.png) | All the quiz is fully interactive and all starts on the Main Page  |
-| As a recurring or first-time visitor, I want to find information of how exactly to play the game | ![screenshot](assets/documentation/popup-window.png) | That's the reason why I added this Popup Window |
-| As a recurring or first-time visitor, I want to have fun with questions and see my result of the quiz | ![screenshot](assets/documentation/result-box.png) | I implemented all UX principles |
+| As a first-time visitor, I want to easily find buttons to play the game and interact with the game | ![screenshot](assets/documentation/main_page.png) | All of quiz sections are easy to interact with and manipulate  |
+| As a recurring or first-time visitor, I want to find information of how exactly to play the game | ![screenshot](assets/documentation/popup_window.png) | This information were added to Popup Window |
+| As a recurring or first-time visitor, I want to have fun with questions and see my result of the quiz | ![screenshot](assets/documentation/result_box.png) | User can see result of the quiz right after answering the last question |
 
 
 ## Known bugs and fixes
 
+I used Google Dev Tools for testing the website and it's layout. This allowed me to check the responsiveness of the site and quickly debug any issues that I came across.
+
+Here is an example with bug of image on Main Page. When website was deployed on GitHub Pages, I immediately found the mistake in console where browser somehow could not find the right path to image.
+![screenshot](assets/documentation/main_image_bug1.png)
+
+Before, I had downloaded image and left it in my assets file of images. Apperantly, it had not been working properly. To fix that, I decided to use link of the same image from website and change the CSS code.
+![screenshot](assets/documentation/main_image_bug2.png)
+
+In addition to testing that I conducted, I got my tutor to test the website and provide feedback on anything he felt didn't work or look right, this enabled me to debug any issues that I might not have otherwise found.
 
 
 ## Unfixed Bugs
 
-There are no remaining bugs that I am aware of.
+Known bug of this project is reponsiveness as showed above. When user use phone to play the game and change to portrait orientation, game is not possible to play from Quiz Section as buttons are covered by white color.
+
+- Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read
+
+There are no other remaining bugs that I am aware of.
 
 ## Deployment
 

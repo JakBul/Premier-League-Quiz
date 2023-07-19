@@ -1,3 +1,6 @@
+ /* jshint esversion: 11 */
+
+
 const QUESTIONS = [
     {
         numb: 1,

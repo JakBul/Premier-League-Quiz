@@ -1,3 +1,5 @@
+ /* jshint esversion: 11 */
+
 //ACCESS THE DOM
 let startBtn = document.querySelector('.start-btn');
 let popupInfo = document.querySelector('.popup-info');
