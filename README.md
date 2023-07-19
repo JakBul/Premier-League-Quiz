@@ -144,6 +144,9 @@ Again, I would like to highlight usage of chosen colors, hover effects, design a
 **BackEnd Language**
 - I would like to implement work with BackEnd language such as Python to be able to work with database and implement score leaderboard. Then, I could create different quiz sections to achieve more competitiveness
 
+**Bootstrap**
+- While implementing BackEnd Language, I think it's important to upgrade responsiveness for the webpage when more sections would be added. Bootstrap could help me to create the right template to use with grid system
+
 ## Tools & Technologies Used
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content
@@ -167,3 +170,60 @@ Again, I would like to highlight usage of chosen colors, hover effects, design a
 ## Media
 
 # Testing
+
+## Deployment
+
+The site was deployed to GitHub Pages. The steps to deploy are as follows:
+- In the [GitHub repository](https://github.com/JakBul/Premier-League-Quiz), navigate to the Settings tab 
+- From the source section drop-down menu, select the **Main** Branch, then click "Save"
+- The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment
+
+The live link can be found [here](https://jakbul.github.io/Premier-League-Quiz)
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/JakBul/Premier-League-Quiz) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/JakBul/Premier-League-Quiz.git`
+7. Press Enter to create your local clone.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/JakBul/Premier-League-Quiz)
+
+Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
+A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakBul/Premier-League-Quiz)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account
+
+## Credits
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README | Tool to help generate the Markdown files |
+| [Unsplash](https://www.unsplash.com/) | Main Page | Image of football pitch |
+
+
+## Acknowledgements
+
+- First and foremost, I would like to thank my Code Institute mentor Rohit for his support throughout the development of this project
+- Secondly,  I would like to thank my Code Institute tutor, [Nigel Edwards](https://github.com/nigel-edwards) for his assistance and guidance from the very start start of studies
+- In addition, I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support
+- Last but not least, I would like to thank my partner Angi, for believing in me, and allowing me to make this transition into software development
