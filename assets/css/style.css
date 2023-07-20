@@ -496,3 +496,53 @@ and add class .active after clicking on button Start Quiz */
         width: 65%;
     }
 }
+
+/*---------------------------------------------------- 404.html */
+
+.error {
+    background-color: #09001d;
+    color: white;
+    min-width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    justify-content: center;
+}
+
+.error h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-top: 5rem;
+}
+
+.error-message {
+    border: 4px solid #c40094;
+    border-radius: 6px;
+    margin: 3rem;
+}
+
+.error-message p {
+    font-size: 1.5rem;
+    margin: 2rem 4rem;
+}
+
+.error-message a {
+    width: 15rem;
+    height: 5rem;
+    background: #c40094;
+    border: 2px solid #ffffff;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 0.625rem #c40094;
+    font-size: 1.125rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .5s;
+    padding: 1rem 2rem;
+}
+
+.error-message a:hover {
+    background: #950170;
+    box-shadow: none;
+}

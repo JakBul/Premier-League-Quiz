@@ -275,7 +275,7 @@ I have tested my deployed project using the Lighthouse Audit tool to check for a
 | User Story | Screenshot | Comments |
 | --- | --- | --- |
 | As a first-time visitor, I want to easily find buttons to play the game and interact with the game | ![screenshot](assets/documentation/main_page.png) | All of the quiz sections are easy to interact with and manipulate  |
-| As a recurring or first-time visitor, I want to find information on how exactly to play the game | ![screenshot](assets/documentation/popup_window.png) | This information were added to Popup Window |
+| As a recurring or first-time visitor, I want to find information on how exactly to play the game | ![screenshot](assets/documentation/popup_window.png) | This information was added to Popup Window |
 | As a recurring or first-time visitor, I want to have fun with questions and see my result of the quiz | ![screenshot](assets/documentation/result_box.png) | User can see the result of the quiz right after answering the last question |
 
 
