@@ -1,4 +1,4 @@
- /* jshint esversion: 11 */
+/* jshint esversion: 6 */
 
 //ACCESS THE DOM
 let startBtn = document.querySelector('.start-btn');
@@ -31,7 +31,7 @@ function startQuiz() {
     main.classList.add('blur');
 }
 
-startBtn.addEventListener('click', startQuiz);
+
 
 //Close popup window when clicking on button Exit in popup window
 function exitQuiz() {
@@ -39,7 +39,7 @@ function exitQuiz() {
     main.classList.remove('blur');
 }
 
-exitBtn.addEventListener('click', exitQuiz);
+
 
 //Open the game window when clicking on button Play in popup window
 function openGame() {
@@ -53,7 +53,7 @@ function openGame() {
     headerScore();
 }
 
-continueBtn.addEventListener('click', openGame);
+
 
 //Start a new game after clicking on button Try Again in result box
 function tryAgain() {
@@ -70,7 +70,7 @@ function tryAgain() {
     headerScore();
 }
 
-tryAgainBtn.addEventListener('click', tryAgain);
+
 
 
 //Send back to homepage when clicking on button Home in result box
@@ -87,7 +87,7 @@ function goHome() {
     questionCounter(questionNumb);
 }
 
-goHomeBtn.addEventListener('click', goHome);
+
 
 //When user clicks on button Next in quiz box(next question), we want to increase number of completed questions by 1 and show another question from questions.js (with right index!!)
 function nextQuestion() {
@@ -104,8 +104,9 @@ function nextQuestion() {
     }
 }
 
-nextBtn.addEventListener('click', nextQuestion);
-
+/*
+* Change function comments!
+*/
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //GAMEPLAY FUNCTIONS
@@ -114,17 +115,6 @@ nextBtn.addEventListener('click', nextQuestion);
 function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
     questionText.textContent = `${QUESTIONS[index].numb}. ${QUESTIONS[index].question}`;
-
-    // MENTOR: (each option own ID, access them by ID and set value to ${QUESTIONS[index].options[0]}, easier for maintenance)
-    /* let option1 = document.getElementById('option1');
-    let option2 = document.getElementById('option2');
-    let option3 = document.getElementById('option3');
-    let option4 = document.getElementById('option4');
-    
-    option1.textContent = `${QUESTIONS[index].options[0]}`;
-    option2.textContent = `${QUESTIONS[index].options[1]}`;
-    option3.textContent = `${QUESTIONS[index].options[2]}`;
-    option4.textContent = `${QUESTIONS[index].options[3]}`; */
 
     let optionTag = `<div class="option"><span>${QUESTIONS[index].options[0]}</span></div>
                     <div class="option"><span>${QUESTIONS[index].options[1]}</span></div>
@@ -136,13 +126,14 @@ function showQuestions(index) {
     //Iterate through options and give them attribute optionSelected when chosen, we use it in the function below
     const option = document.querySelectorAll('.option');
     for (let i=0; i < option.length; i++) {
-        option[i].setAttribute('onclick', 'optionSelected(this)');
+        option[i].addEventListener('click', optionSelected);
     }
 }
 
 
 //Check user's answer and compare with the correct one, also show the green/red color depending on answer
-function optionSelected(answer) {
+function optionSelected(event) {
+    let answer = event.target;
     let userAnswer = answer.textContent;
     let correctAnswer = QUESTIONS[questionCount].answer;
     let allOptions = optionList.children.length;
@@ -223,5 +214,10 @@ function showResultBox () {
 
 //Execute our JS code only when the DOM is fully loaded
 window.addEventListener("DOMContentLoaded", (event) => {
-    console.log('Page is fully loaded');
+    startBtn.addEventListener('click', startQuiz);
+    exitBtn.addEventListener('click', exitQuiz);
+    continueBtn.addEventListener('click', openGame);
+    tryAgainBtn.addEventListener('click', tryAgain);
+    goHomeBtn.addEventListener('click', goHome);
+    nextBtn.addEventListener('click', nextQuestion);
 });
