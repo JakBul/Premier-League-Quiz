@@ -134,15 +134,31 @@ When the user answers on last 10th question and clicks on the button 'Next', the
 
 Users can decide to go back to Main Page or Try Again. However, the user has to start from the first question and score 0 again. 
 
-Again, I would like to highlight the usage of chosen colors, hover effects, design and responsiveness for following our UX goals.
+Again, I would like to highlight the usage of chosen colors, hover effects, design and responsiveness for following the UX goals.
 
 ![screenshot](assets/documentation/result_box.png)
+
+- **Favicon**
+
+As a rule of thumb, I added the Favicon which relates to the topic of the quiz.
+
+![screenshot](assets/documentation/favicon.png)
+
+- **404 page**
+
+When anything goes wrong with the link to the project, the 404 page pops up to make sure it leads the user to the Main Page. In the example below, I added to the original deployed link 'something-wrong-written-here' and it automatically redirected me to this page.
+
+![screenshot](assets/documentation/404.png)
 
 
 ### Future Features
 
+**Improvement of JS Code**
+- I had a few ideas of how to improve the code quality and make it easier for maintenance. First of all, I could delete global scope variables entirely and access the userScore or QuestionCount by JS DOM. Other ideas of my mentor and tutor are to randomize question and answers order, or move the question.js file to JSON file to decouple it from the program.
+
+
 **BackEnd Language**
-- I would like to implement work with BackEnd language such as Python to be able to work with databases and implement score leaderboards. Then, I could create different quiz sections to achieve more competitiveness
+- I would like to implement work with BackEnd language such as Python to be able to work with databases and implement score leaderboards. Then, I could create different quiz sections to achieve more competitiveness.
 
 **Bootstrap**
 - While implementing BackEnd Language, I think it's important to upgrade responsiveness for the webpage when more sections would be added. Bootstrap could help me to create the right template to use with the grid system.
@@ -237,7 +253,7 @@ I have used the recommended [JSHint](https://jshint.com/) to validate my JS file
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| script.js and questions.js | ![screenshot](assets/documentation/js_validation.png) | Pass: No Errors when validated by input with ES6 standard, only one unused variable |
+| script.js and questions.js | ![screenshot](assets/documentation/js_validation.png) | Pass: No Errors when validated by input with ES6 standard |
 
 ## Browser Compatibility
 
