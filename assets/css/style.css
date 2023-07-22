@@ -25,7 +25,7 @@ body {
     transition: .3s ease;
 }
 
-/* After opening pop up window, the main section will get blur effect in order to highlight the pop up window and motivate to play */ 
+/* After opening the Popup window, the main section will get blurred effect in order to highlight the Popup window and to motivate the user to play */ 
 .main.blur {
     filter: blur(15px);
     pointer-events: none;
@@ -34,7 +34,7 @@ body {
 .home {
     position: relative;
     height: 100vh;
-    width: 100%;
+    min-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,13 +81,13 @@ body {
     box-shadow: none;
 }
 
-/*---------------------------------------------------- Pop Up */
+/*---------------------------------------------------- Popup Window */
 
 .popup-info {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(.9);         /* Add a bit of interaction experience - scaling the pop up windowd after clicking on the Start Quiz button*/ 
+    transform: translate(-50%, -50%) scale(.9);         /* Add a bit of interaction experience - scaling the Popup window after clicking on the Start Quiz button*/ 
     width: 40%;
     background: #ffffff;
     border-radius: 6px;
@@ -97,8 +97,8 @@ body {
     transition: 0.3s ease;
 }
 
-/* pop up window is not visible on the website for now (opacity: 0), we will access it through JS DOM
-and add class .active after clicking on button Start Quiz */
+/* Popup window is not visible on the website for now (opacity: 0), we will access it through JS DOM */
+
 
 .popup-info.active {
     opacity: 1;
@@ -147,7 +147,7 @@ and add class .active after clicking on button Start Quiz */
     transition: .5s;
 }
 
-.popup-info .btn-group .info-btn:nth-child(1) {         /* easy way of targetting first child .info-btn (button) */ 
+.popup-info .btn-group .info-btn:nth-child(1) {         /* easy way of targetting the first child .info-btn (button) */ 
     background: transparent;
     color: #c40094;
 }
@@ -157,7 +157,7 @@ and add class .active after clicking on button Start Quiz */
     color: #ffffff;
 }
 
-.popup-info .btn-group .info-btn:nth-child(2):hover {   /* easy way of targetting second child .info-btn (a) */
+.popup-info .btn-group .info-btn:nth-child(2):hover {   /* easy way of targetting the second child .info-btn (a) */
     background-color: #950170;
     border-color: #950170;
 }
@@ -204,7 +204,7 @@ and add class .active after clicking on button Start Quiz */
     transition-delay: 0s;
 }
 
-.quiz-section .quiz-box.active {                        /* Add another movement of quiz-box after opening quiz for better appearance */
+.quiz-section .quiz-box.active {                        /* Add another movement of quiz-box after opening the quiz for a better appearance */
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
@@ -333,7 +333,7 @@ and add class .active after clicking on button Start Quiz */
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    pointer-events: none;                               /* Opacity is 0 again, we access it through JS at the end of game */
+    pointer-events: none;                               /* Opacity is 0, we access it through JS at the end of game */
     transition: .3s ease;
 }
 

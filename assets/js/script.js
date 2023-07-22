@@ -1,6 +1,9 @@
 /* jshint esversion: 6 */
 
-//ACCESS THE DOM
+/** ACCESS THE DOM
+ * We are working with these variables throughout the project
+ */
+
 let startBtn = document.querySelector('.start-btn');
 let popupInfo = document.querySelector('.popup-info');
 let exitBtn = document.querySelector('.exit-btn');
@@ -15,33 +18,33 @@ let nextBtn = document.querySelector('.next-btn');
 let optionList = document.querySelector('.option-list');
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Global variables - (MENTOR: Access HTML with the div, create function that incrementScore if answer is correct (userScore) )
+/** GLOBAL VARIABLES
+ *  We are working with these variables throughout the project
+ */
+
 let questionCount = 0;
 let questionNumb  = 1;
 let userScore = 0;
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//FUNCTIONS FOR BUTTONS
+/** FUNCTIONS FOR BUTTONS 
+ * All event listeners for these buttons are on the end of this code, we firstly make sure that DOM is fully loaded
+ * These functions react on the user interaction 
+ */
 
-//Open popup window when clicking on button Start Quiz on homepage
+//Open the Popup window when clicking on the button Start Quiz on the Main Page
 function startQuiz() {
     popupInfo.classList.add('active');
     main.classList.add('blur');
 }
 
-
-
-//Close popup window when clicking on button Exit in popup window
+//Close the Popup window when clicking on the button Exit in the Popup window
 function exitQuiz() {
     popupInfo.classList.remove('active');
     main.classList.remove('blur');
 }
 
-
-
-//Open the game window when clicking on button Play in popup window
+//Open the game window when clicking on the button Play in the Popup window
 function openGame() {
     quizSection.classList.add('active');
     popupInfo.classList.remove('active');
@@ -53,9 +56,7 @@ function openGame() {
     headerScore();
 }
 
-
-
-//Start a new game after clicking on button Try Again in result box
+//Start a new game after clicking on the button Try Again in the Result box
 function tryAgain() {
     quizBox.classList.add('active');
     nextBtn.classList.remove('active');
@@ -70,16 +71,13 @@ function tryAgain() {
     headerScore();
 }
 
-
-
-
-//Send back to homepage when clicking on button Home in result box
+//Send back to the Main Page when clicking on the button Home in the Result box
 function goHome() {
     quizSection.classList.remove('active');
     nextBtn.classList.remove('active');
     resultBox.classList.remove('active');
     
-    //Reset stats after going back Home, player might play another Game
+    //Reset stats after going back to the Main Page, users might play another game
     questionCount = 0;
     questionNumb  = 1;
     userScore = 0;
@@ -87,9 +85,7 @@ function goHome() {
     questionCounter(questionNumb);
 }
 
-
-
-//When user clicks on button Next in quiz box(next question), we want to increase number of completed questions by 1 and show another question from questions.js (with right index!!)
+//When the user clicks on the button Next in the Quiz box, we want to increase the number of completed questions by 1 and show another question from questions.js (with right index!!)
 function nextQuestion() {
     if (questionCount < QUESTIONS.length -1) {
         questionCount++;
@@ -104,14 +100,11 @@ function nextQuestion() {
     }
 }
 
-/*
-* Change function comments!
-*/
+/** GAMEPLAY FUNCTIONS
+ *  These functions take care of the quiz flow
+ */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//GAMEPLAY FUNCTIONS
-
-//Get quiz questions and options from array in questions.js
+//Get the quiz questions and options from array in questions.js
 function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
     questionText.textContent = `${QUESTIONS[index].numb}. ${QUESTIONS[index].question}`;
@@ -123,15 +116,14 @@ function showQuestions(index) {
 
     optionList.innerHTML = optionTag;
 
-    //Iterate through options and give them attribute optionSelected when chosen, we use it in the function below
+    //Iterate through the options and control what user chooses
     const option = document.querySelectorAll('.option');
     for (let i=0; i < option.length; i++) {
         option[i].addEventListener('click', optionSelected);
     }
 }
 
-
-//Check user's answer and compare with the correct one, also show the green/red color depending on answer
+//Check the users answer and compare it with the correct one, then show the green/red color depending on the answer
 function optionSelected(event) {
     let answer = event.target;
     let userAnswer = answer.textContent;
@@ -140,44 +132,40 @@ function optionSelected(event) {
 
     if (userAnswer === correctAnswer) {
         answer.classList.add('correct');
-        //The correct answer adds one point to overall score
+        //The correct answer adds one point to the overall score
         userScore += 1;
         headerScore();
     } else {
         answer.classList.add('incorrect');
 
-        //When user selects an incorrect answer, we will show him the correct one (auto select)
+        //When the user selects an incorrect answer, we will show him the correct one (auto select)
         for (let i = 0; i < allOptions; i++) {
             if (optionList.children[i].textContent === correctAnswer) {
                 optionList.children[i].setAttribute('class', 'option correct');
             }
         }
     }
-
     //When user selects one of the possible answers, we have to disable other options simultaneously to prevent multianswering
     for (let i = 0; i < allOptions; i++) {
         optionList.children[i].classList.add('disabled');
     }
-
-    //User can not move to next question when has not answered yet
+    //User can not move to the next question when has not answered yet
     nextBtn.classList.add('active');
-    
 }
 
-
-//Count how many questions user finished and show it in the quiz
+//Count on how many questions have the user already answered and show it in the quiz
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
     questionTotal.textContent = `${index} of ${QUESTIONS.length} Questions`;
 }
 
-//Count how many questions are answered correctly and show it in the quiz
+//Count how many questions have been answered correctly and show it in the quiz
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
     headerScoreText.textContent = `Score: ${userScore} / ${QUESTIONS.length}`;
 }
 
-//Show results box, quizBox disappears after last question
+//Show the Result box, the quizBox disappears after the last answered question
 function showResultBox () {
     quizBox.classList.remove('active');
     resultBox.classList.add('active');
@@ -185,7 +173,7 @@ function showResultBox () {
     const scoreText = document.querySelector('.score-text');
     scoreText.textContent = `Your Score is ${userScore} out of ${QUESTIONS.length}`;
 
-    //Shows results dynamically with help of Interval
+    //Shows the result dynamically with help of Interval
     const circularProgress = document.querySelector('.circular-progress');
     const progressValue = document.querySelector('.progress-value');
 
@@ -198,21 +186,18 @@ function showResultBox () {
         progressStartValue++;
 
         progressValue.textContent = `${progressStartValue}% `;
-        //(MENTOR: use CSS var targeting)
         circularProgress.style.background = `conic-gradient(#c40094 ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1)0deg)`;
 
         if (progressStartValue == progressEndValue) {
             clearInterval(progress);
         }
     }, speed);
-
 }
 
+/** DOM LOADED
+ *  Important to execute our JS code only when the DOM is fully loaded
+ */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//DOM LOADED
-
-//Execute our JS code only when the DOM is fully loaded
 window.addEventListener("DOMContentLoaded", (event) => {
     startBtn.addEventListener('click', startQuiz);
     exitBtn.addEventListener('click', exitQuiz);

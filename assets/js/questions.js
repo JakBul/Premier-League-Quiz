@@ -1,7 +1,6 @@
  /* jshint esversion: 6 */
 
-
-const QUESTIONS = [
+ const QUESTIONS = [
     {
         numb: 1,
         question: "Which player has the most Premier League appearances?",
