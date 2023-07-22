@@ -17,7 +17,7 @@ The business goals for this website are:
 The user goals of this website are:
 1. As a first-time visitor, I want to easily find buttons to play the game and interact with the game
 2. As a recurring or first-time visitor, I want to find information on how exactly to play the game
-3. As a recurring or first-time visitor, I want to have fun with questions and see my result of the quiz
+3. As a recurring or first-time visitor, I want to have fun with questions and see my result from the quiz
 
 
 ## UX
@@ -33,7 +33,7 @@ Premier League Quiz target users are:
 
 What these users would be looking for:
 * Clear information and easy-to-use interaction
-* Good & simple looking design that provides inspiration and makes the quiz look desirable
+* Good & simple-looking design that provides inspiration and makes the quiz look desirable
 
 This quiz has been built to offer all of these things. An effort was taken to provide as intuitive interaction as possible for every user visiting the webpage.
 
@@ -48,12 +48,12 @@ To achieve the desired user & business goals, the following features will be inc
 - Quiz Section which contains 10 Questions with 4 possible answers
 - Every question has only one correct answer
 - Only after answering each question, the user can move to another one
-- After the last question the result will be shown in the Result Box section
+- After the last question, the result will be shown in the Result Box section
 - User can go back to the menu of the game if needs or play again upon clicking on the button Try Again 
 
 ### **Structure** 
 
-This is one-page website to reach simplicity.
+This is the one-page website to reach simplicity.
 
 I chose the following order for the gameplay 'Main Page > Popup Window with rules > Quiz Section > Result Box', as I felt this would allow the whole quiz to be digested in the best way.
 
@@ -73,7 +73,7 @@ I felt that all mentioned above helps to provide the best User Experience and hi
 
 Important to mention - this project had to pass all of the accessibility criteria, that's why I had to choose the type of colors and backgrounds that will easily pass them.
 
-### Colour Scheme
+### Color Scheme
 
 I chose a color palette based around white & black as these colors are elegant and simple to implement into the design. I added darker violet color for buttons and headings. Additionally, I chose to use other colors for hover effects and box shadowing.
 
@@ -154,7 +154,7 @@ When anything goes wrong with the link to the project, the 404 page pops up to m
 ### Future Features
 
 **Improvement of JS Code**
-- I had a few ideas of how to improve the code quality and make it easier for maintenance. First of all, I could delete global scope variables entirely and access the userScore or QuestionCount by JS DOM. Other ideas of my mentor and tutor are to randomize question and answers order, or move the question.js file to JSON file to decouple it from the program.
+- I had a few ideas on how to improve the code quality and make it easier for maintenance. First of all, I could delete global scope variables entirely and access the userScore or QuestionCount by JS DOM. Other ideas of my mentor and tutor are to randomize question and answer order or move the question.js file to a JSON file to decouple it from the program.
 
 
 **BackEnd Language**
@@ -171,7 +171,7 @@ When anything goes wrong with the link to the project, the 404 page pops up to m
 - [Git](https://git-scm.com) used for version control (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage
 - [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site
-- [Gitpod](https://gitpod.io) used as a cloud-based IDE for development
+- [Gitpod](https://gitpod.io) used as a cloud-based IDE for the development
 - [Unsplash](https://www.unsplash.com/) used to find and download free images for the project
 - [Google Fonts](https://fonts.google.com/) used to obtain the fonts linked in the header and used in the project
 - [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools) used as a primary method of fixing spacing issues, finding bugs, and testing responsiveness across the project
@@ -187,7 +187,7 @@ When anything goes wrong with the link to the project, the 404 page pops up to m
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Unsplash](https://unsplash.com/photos/deGn9vSwXIM) | Main Page | image | Used as link in CSS code |
+| [Unsplash](https://unsplash.com/photos/deGn9vSwXIM) | Main Page | image | Used as the link in CSS code |
 
 # Testing
 
@@ -195,17 +195,17 @@ I used solely Manual Testing for this project. However, other possibilities coul
 
 | Criteria | Automation Testing = AT | Manual Testing = MT |
 | --- | --- | --- |
-| Speed | AT is much faster than MT | MT requires human resources and is time consuming |
+| Speed | AT is much faster than MT | MT requires human resources and is time-consuming |
 | Exploratory Testing | AT will not allow any random testing | Possible during MT |
 | Performance Testing | Possible with AT, for example Load Testing | Very difficult to do manually |
 | Investment | The initial investment for AT is higher | The initial investment for MT is lower |
-| Investment Type | More investment needed for testing tools and automation engineers | Investment needed for human resources |
+| Investment Type | More investment is needed for testing tools and automation engineers | Investment is needed for human resources |
 | Cost-effective | AT is cost-effective | MT is not cost-effective, ROI is lower |
 | Reliability | AT is more reliable thanks to performing by tools and scripts | MT isn't as accurate as there is a chance of human error |
 | Test Reports | All programmers can check test results by logging into the automation system | Usually updated in Excel/Word and test results are not readily available |
-| Deadlines | AT has low risks of missing out on any test deadlines | MT has a higher chance of missing out on the test deadline |
-| Framework | AT uses frameworks like Data Driven or Keyword to speed up the process | MT doesn't use frameworks, but usually uses guidelines, checklists or strict processes |
-| When to use? | AT is well suited for performance testing and repeatable functional test cases | MT is suitable for usability, exploratory or AdHoc testing|
+| Deadlines | AT has low risk of missing out on any test deadlines | MT has a higher chance of missing out on the test deadline |
+| Framework | AT uses frameworks like Data Driven or Keyword to speed up the process | MT doesn't use frameworks but usually uses guidelines, checklists or strict processes |
+| When to use it? | AT is well suited for performance testing and repeatable functional test cases | MT is suitable for usability, exploratory or AdHoc testing|
 
 
 ## Defensive Programming
@@ -215,19 +215,19 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| Main Page | Click on button 'Start Quiz' | Popup Window pops up | Pass | Added transition to blur effect |
-| Popup Window | Click on button 'Exit' | Redirect back to Main Page | Pass | Removes blur effect |
-| | Click on button 'Play' | Start the game | Pass | Added transition between Main Page and Quiz Section |
+| Main Page | Click on the button 'Start Quiz' | Popup Window pops up | Pass | Added transition to the blurred effect |
+| Popup Window | Click on the button 'Exit' | Redirect back to the Main Page | Pass | Removes the blurred effect |
+| | Click on the button 'Play' | Start the game | Pass | Added transition between the Main Page and the Quiz Section |
 | Quiz Section | Click on one of the possible answers button | Show if the answer is correct or not | Pass | |
 | | | If the answer is incorrect, the button becomes red | Pass | |
-| | | Button of the right answer becomes green and the user can move to another question by clicking on the button 'Next' (not before!)| Pass | |
+| | | The button of the right answer becomes green and the user can move to another question by clicking on the button 'Next' (not before!)| Pass | |
 | | | If the answer is correct, the button becomes green | Pass | |
-| | | User gets one point to Score | Pass | |
-| | Click on button 'Next' | Next questions shows up | Pass | |
-| | | Question counter works properly | Pass | |
-| | Click on button 'Next' on the last 10th question | Result box shows up | Pass | Added transition between Quiz Section and Result Box |
-| Result Box | Click on button 'Try Again' | Start a new game | Pass | |
-| Result Box | Click on button 'Go To Home' | Redirect back to Main Page | Pass | Added transition between Result Box and Main Page |
+| | | The user gets one point to the Score | Pass | |
+| | Click on the button 'Next' | Next question shows up | Pass | |
+| | | The question counter works properly | Pass | |
+| | Click on the button 'Next' when answering the last 10th question | The Result box shows up | Pass | Added transition between the Quiz Section and the Result Box |
+| Result Box | Click on the button 'Try Again' | Start a new game | Pass | |
+| Result Box | Click on the button 'Go To Home' | Redirect back to the Main Page | Pass | Added transition between the Result Box and the Main Page |
 
 
 ## Code Validation
@@ -299,10 +299,10 @@ I have tested my deployed project using the Lighthouse Audit tool to check for a
 
 I used Google Dev Tools for testing the website and its layout. This allowed me to check the responsiveness of the site and quickly debug any issues that I came across.
 
-Here is an example of a bug in the image on the Main Page. When the website was deployed on GitHub Pages, I immediately found the mistake in the console where browser somehow could not find the right path to the image.
+Here is an example of a bug in the image on the Main Page. When the website was deployed on GitHub Pages, I immediately found a mistake in the console where the browser somehow could not find the right path to the image.
 ![screenshot](assets/documentation/main_image_bug1.png)
 
-Before, I had downloaded the image and left it in my assets file of images. Apparently, it had not been working properly. To fix that, I decided to use the link of the same image from a website and change the CSS code.
+Before, I had downloaded the image and left it in my assets file of images. It had not been working properly. To fix that, I decided to use the link of the same image from a website and change the CSS code.
 ![screenshot](assets/documentation/main_image_bug2.png)
 
 In addition to the testing that I conducted, I got my tutor to test the website and provide feedback on anything he felt didn't work or look right, this enabled me to debug any issues that I might not have otherwise found.
@@ -355,7 +355,7 @@ By forking the GitHub Repository, we make a copy of the original repository on o
 You can fork this repository by using the following steps:
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JakBul/Premier-League-Quiz)
-2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button
+2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account
 
 ## Credits
@@ -363,10 +363,10 @@ You can fork this repository by using the following steps:
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README | Tool to help generate the Markdown files |
-| [Unsplash](https://www.unsplash.com/) | Main Page | Image of football pitch |
+| [Unsplash](https://www.unsplash.com/) | Main Page | Image of a football pitch |
 
 
-## Acknowledgements
+## Acknowledgments
 
 - First and foremost, I would like to thank my Code Institute mentor Rohit for his support throughout the development of this project
 - Secondly,  I would like to thank my Code Institute tutor, [Nigel Edwards](https://github.com/nigel-edwards) for his assistance and guidance from the very start of my studies
